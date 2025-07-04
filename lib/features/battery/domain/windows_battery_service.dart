@@ -1,5 +1,4 @@
 import 'dart:io';
-
 import 'package:process_run/process_run.dart';
 
 import 'battery_service.dart';
@@ -10,17 +9,23 @@ class WindowsBatteryService implements BatteryService {
     final shell = Shell();
 
     try {
-      // ❶ توليد التقرير
-      await shell.run('powercfg /batteryreport');
+      final result = await shell.run('powercfg /batteryreport');
 
-      // ❷ المسار الافتراضي للتقرير
-      final user = Platform.environment['USERNAME'];
-      final path = 'C:\\Users\\$user\\battery-report.html';
+      final output = result.outText;
+      print("OUTPUT:\n$output");
 
-      if (await File(path).exists()) {
+      // مطابقة أي مسار فيه battery-report.html
+      final match = RegExp(r'([\w:\\\/.-]*battery-report\.html)', caseSensitive: false)
+          .firstMatch(output);
+
+      if (match != null) {
+        final path = match.group(1)?.trim();
+        print("Matched path: $path");
+
         return path;
       }
-      return null; // لم يُنشأ
+
+      return null;
     } catch (e) {
       print('Battery report error: $e');
       return null;

@@ -22,7 +22,7 @@ class PlanQSupportApp extends StatelessWidget {
           scaffoldBackgroundColor: Colors.white,
         ),
         debugShowCheckedModeBanner: false,
-        initialRoute: Routes.splashScreen,
+        initialRoute: Routes.storageScreen,
         onGenerateRoute: appRouter.generateRoute,
       ),
     );
