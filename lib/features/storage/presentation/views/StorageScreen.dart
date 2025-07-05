@@ -1,5 +1,6 @@
 import 'dart:io';
 import 'package:flutter/material.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:process_run/process_run.dart';
 
 import '../../../../../core/helpers/platformService.dart';

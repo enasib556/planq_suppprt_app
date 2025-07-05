@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+import 'home_widgets/custom_app_bar.dart';
+import 'home_widgets/home_body.dart';
 
 class HomeScreen extends StatelessWidget {
   const HomeScreen({super.key});
@@ -6,7 +8,8 @@ class HomeScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(title: const Text('Home Screen')),
+      appBar:CustomTopBar(title: "Welcome to planQ support system"),
+      body: HomeBody()
     );
   }
 }

@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
-
 import '../../core/routing/app_router.dart';
 import 'core/routing/routes.dart';
 import 'core/theming/colors.dart';
@@ -22,7 +21,7 @@ class PlanQSupportApp extends StatelessWidget {
           scaffoldBackgroundColor: Colors.white,
         ),
         debugShowCheckedModeBanner: false,
-        initialRoute: Routes.storageScreen,
+        initialRoute: Routes.HomeScreen,
         onGenerateRoute: appRouter.generateRoute,
       ),
     );
