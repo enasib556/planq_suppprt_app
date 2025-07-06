@@ -9,7 +9,7 @@ class CustomTopBar extends StatelessWidget implements PreferredSizeWidget {
   const CustomTopBar({super.key, required this.title});
 
   @override
-  Size get preferredSize =>  Size.fromHeight(24);
+  Size get preferredSize => Size.fromHeight(24);
 
   @override
   Widget build(BuildContext context) {
@@ -19,10 +19,7 @@ class CustomTopBar extends StatelessWidget implements PreferredSizeWidget {
         color: Colors.black,
         alignment: Alignment.centerLeft,
         padding: const EdgeInsets.symmetric(horizontal: 10),
-        child: Text(
-          title,
-          style: TextStyles.font14WhiteBold
-        ),
+        child: Text(title, style: TextStyles.font14_WhiteBold),
       ),
     );
   }

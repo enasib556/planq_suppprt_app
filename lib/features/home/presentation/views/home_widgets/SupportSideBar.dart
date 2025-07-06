@@ -8,7 +8,7 @@ class SupportSideBar extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Padding(
-      padding: const EdgeInsets.only(left: 10,bottom: 20),
+      padding: const EdgeInsets.only(left: 10, bottom: 20),
       child: Container(
         width: 40,
         height: double.infinity,
@@ -20,7 +20,7 @@ class SupportSideBar extends StatelessWidget {
             child: Text(
               'Support Center',
               textAlign: TextAlign.end,
-              style: TextStyles.font20WhiteBold
+              style: TextStyles.font21WhiteBold,
             ),
           ),
         ),
