@@ -15,4 +15,5 @@ abstract class AppImages {
   static const String BIOS = "assets/images/Bios.png";
   static const String APPROACHING = "assets/images/Approaching.png";
   static const String PLANQ_LOGO = "assets/images/planq.png";
+  static const String Storage ='assets/images/Storate.png';
 }

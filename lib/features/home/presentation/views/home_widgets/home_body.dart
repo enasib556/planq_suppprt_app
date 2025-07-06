@@ -1,10 +1,10 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:windows_desktop_app/core/theming/images.dart';
 import 'package:windows_desktop_app/core/theming/text_styles.dart';
-import 'package:windows_desktop_app/features/home/presentation/views/home_widgets/firstcardhome.dart';
-import 'package:windows_desktop_app/features/home/presentation/views/home_widgets/secondcardhome.dart';
-import 'package:windows_desktop_app/features/home/presentation/views/home_widgets/thirdcardhome.dart';
-
+import 'package:windows_desktop_app/features/home/presentation/views/home_widgets/device_info_card.dart';
+import 'package:windows_desktop_app/features/home/presentation/views/home_widgets/diagnostics_card.dart';
+import 'package:windows_desktop_app/features/home/presentation/views/home_widgets/remote_support_card.dart';
 import 'SupportSideBar.dart';
 
 class HomeBody extends StatelessWidget {
@@ -19,27 +19,24 @@ class HomeBody extends StatelessWidget {
           child: Column(
             children: [
               Row(
+                crossAxisAlignment: CrossAxisAlignment.center,
                 mainAxisAlignment: MainAxisAlignment.spaceBetween,
                 children: [
                   Padding(
-                    padding: const EdgeInsets.symmetric(
-                      horizontal: 40,
-                      vertical: 20,
+                    padding:  EdgeInsets.symmetric(
+                      horizontal: 40.w,
+                      vertical: 20.h,
                     ),
                     child: Image(
-                      image: AssetImage(AppImages.battery),
-                      height: 50,
+                      image: AssetImage(AppImages.PLANQ_LOGO),
+                      height: 60,
                     ),
                   ),
                   Padding(
                     padding: const EdgeInsets.all(15.0),
                     child: Text(
                       'Welcome Ahmed Tamer',
-                      style: TextStyle(
-                        fontSize: 20,
-                        fontWeight: FontWeight.bold,
-                        color: Colors.black,
-                      ),
+                      style: TextStyles.font15MediumBlack
                     ),
                   ),
                 ],
@@ -51,12 +48,9 @@ class HomeBody extends StatelessWidget {
                     mainAxisAlignment: MainAxisAlignment.spaceBetween,
                     crossAxisAlignment: CrossAxisAlignment.stretch,
                     children: [
-                      //first card
-                      Firstcardhome(),
-                      //second card
-                      Secondcardhome(),
-                      // third card
-                      Thirdcardhome(),
+                      Expanded(child: DeviceInfoCard()),
+                      Expanded(child: DiagnosticsCard()),
+                      Expanded(child: RemoteSupportCard()),
                     ],
                   ),
                 ),
