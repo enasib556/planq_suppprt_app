@@ -23,7 +23,7 @@ class _BIOSScreenState extends State<BIOSScreen> {
     final path = await service.generateReport();
 
     if (path == null) {
-      setState(() => _error = '❌ لم يُنشأ تقرير BIOS. تأكد من الصلاحيات.');
+      setState(() => _error = 'Check your permissions and try again');
     } else {
       setState(() => _path = path);
     }
