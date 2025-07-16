@@ -43,13 +43,12 @@ This document describes the implementation of Mouse and BIOS diagnostics feature
 ### Navigation
 1. Open the PlanQ Support System application
 2. Navigate to the "System Diagnostics" card
-3. Click on the "Mouse" or "BIOS" icon
-4. The application will navigate to the respective diagnostic screen
+3. **Note:** As of the latest update, navigation to the BIOS diagnostics screen from the home screen diagnostics grid is **disabled**. Users can no longer access the BIOS diagnostics screen by clicking the BIOS icon in the grid.
+4. The application will not navigate to the BIOS diagnostic screen from the grid. (This also applies to Mouse diagnostics if navigation is disabled.)
 
 ### Generating Reports
-1. On the diagnostic screen, click "Generate [Mouse/BIOS] Report"
-2. The system will create an HTML report file
-3. Click "Open Report" to view the generated report in your default browser
+- If navigation is re-enabled in the future, users will be able to generate BIOS and Mouse reports as described previously.
+- For now, BIOS and Mouse diagnostic screens are not accessible from the home screen.
 
 ## File Structure
 
@@ -118,10 +117,10 @@ cat /sys/class/dmi/id/bios_date
 
 ## Integration
 
-The Mouse and BIOS diagnostics are fully integrated with the existing application:
+The Mouse and BIOS diagnostics are fully integrated with the existing application, but navigation to these screens from the home screen grid is currently **disabled**:
 
 1. **Routing** - Added routes for `/mouseScreen` and `/biosScreen`
-2. **Navigation** - Updated diagnostics grid to be clickable
+2. **Navigation** - Diagnostics grid icons are no longer clickable for Mouse and BIOS
 3. **Factory Pattern** - Extended device factories to create mouse and BIOS services
 4. **Platform Detection** - Automatically uses the correct implementation based on OS
 
@@ -131,8 +130,8 @@ To test the implementation:
 
 1. Run the application: `flutter run -d windows`
 2. Navigate to the diagnostics section
-3. Click on Mouse or BIOS icons
-4. Generate reports and verify they open correctly
+3. Note that Mouse and BIOS icons are not interactive
+4. If navigation is re-enabled, generate reports and verify they open correctly
 
 ## Future Enhancements
 
